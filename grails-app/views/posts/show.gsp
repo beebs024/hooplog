@@ -54,9 +54,7 @@
 
                     <button onclick="hideNewCommentBox()" id="HideNewCommentBlock">New Comment</button>
                         <div id="newCommentBox" style="display: none;">
-                            <br><g:textArea name="newCommentTextBox" id="commentMessage"/><br>
-
-                            <button id="addComment">Post Comment</button>
+                            <g:render template="/comments/commentsEntry" bean="${Posts}" var="Posts"/>
                         </div>
                     <div id="postedComments">
                     <g:findAll in="${Comments}" expr="postId==posts.id">
@@ -66,6 +64,7 @@
 
 
                     </g:findAll>
+
                     </div>
                 </div>
             </div>
