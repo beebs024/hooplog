@@ -54,11 +54,11 @@
 
                     <button onclick="hideNewCommentBox()" id="HideNewCommentBlock">New Comment</button>
                         <div id="newCommentBox" style="display: none;">
-                            <g:render template="/comments/commentsEntry" bean="${Posts}" var="Posts"/>
+                            <g:render template="/comments/commentsEntry" bean="${this.posts}"/>
                         </div>
                     <div id="postedComments">
                     <g:findAll in="${Comments}" expr="postId==posts.id">
-                            <ul id="commentList">
+                            <ul>
                                 ${it.commentText}<br>
                             </ul>
 

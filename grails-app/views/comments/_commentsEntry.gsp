@@ -1,11 +1,11 @@
 <asset:javascript src="jquery-2.2.0.min.js"/>
-<%@ page import="com.manifest.corp.Comments" %>
+<%@ page import="com.manifest.corp.Posts; com.manifest.corp.Comments" %>
 <div class="col-md-3">
     <div class="btn btn-default btn-success" id="displayCommentTextBox">Post A Comment</div>
 </div>
 
 <div class="col-md-12" id="commentSection" style="display: none">
-    <g:render template="/comments/commentsForm" bean="${Posts}" var="blogPost"/>
+    <g:render template="/comments/commentsForm" bean="${com.manifest.corp.Posts}" var="Post"/>
 </div>
 <ul id="commentList"></ul>
 
@@ -24,7 +24,7 @@
                     $.each(data, function () {
                         $("#commentList").append("<li class='commentItem col-md-8 col-md-offset-2 commentItem'>" +
                             "<div><span class='dataComment'>" + this.dateCreated + "</span></div>" +
-                            "<span>" + this.CommentText + "</span></li>").slideDown()
+                            "<span>" + this.comment + "</span></li>").slideDown()
                     });
                 }
 
