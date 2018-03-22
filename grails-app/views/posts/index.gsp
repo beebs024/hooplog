@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="layout" content="main" />
+        <g:set var="entityName" value="${message(code: 'posts.label', default: 'Posts')}" />
+        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <style>
+        textarea{
+            color: #1bf0ff;
+            width: 80%;
+            position: center;
+            height: 75%;
+            overflow: hidden;
+            border: none;
+            background-color: rgba(27, 240, 255, 0);
+        }
+         .portalLink{
+                margin-bottom: 40px;
+                border: 3px dotted #000000;
+            }
+        </style>
+
+    </head>
+    <body>
+        <a href="#list-posts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+        <div class="nav" role="navigation">
+            <ul>
+                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+            </ul>
+        </div>
+        <div id="list-posts" class="content scaffold-list" role="main">
+            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <g:if test="${flash.message}">
+                <div class="message" role="status">${flash.message}</div>
+            </g:if>
+            <g:each in="${postsList.reverse()}">
+                <div class="portalLink row">
+                    <h1><b><u>${it.title}</u></b></h1>
+                    <h2>By: ${it.author}</h2>
+                    <div class="container"></div>
+                    <g:textArea name="postText" value="${it.postText}" readonly="true"/>
+                    <div class="container">
+                        <div class="col-sm-1">
+                            <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title]}"><input type="button" value="Show">
+                            </g:link>
+                        </div>
+                    </div>
+                </div>
+            </g:each>
+            <div class="pagination">
+                <g:paginate total="${postsCount ?: 0}" />
+            </div>
+        </div>
+    </body>
+</html>
