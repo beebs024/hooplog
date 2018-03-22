@@ -14,7 +14,7 @@ class Comments {
         version false
         commentText column: 'Comment_Text'
         postId column: 'Post_ID'
-        sort datePosted: "asc"
+        sort datePosted: "desc"
     }
 
     static constraints = {

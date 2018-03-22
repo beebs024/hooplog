@@ -17,15 +17,6 @@
                 border-radius: 15px;
                 padding: 5px;
             }
-        #commentsArea{
-            padding: 5px;
-            color: #000000;
-            }
-
-        #postedComments{
-            padding: 5px;
-            color: #1bf0ff;
-            }
 
         </style>
         <g:javascript library="jquery"/>
@@ -49,24 +40,9 @@
                 <h2>By: ${posts.author}</h2>
                 <h3>${posts.postText}</h3>
 
-                <button onclick="hideComments()" id="HideComments">Hide/Show Comments</button>
-                <div id="commentsArea" style="display: none;">
-
-                    <button onclick="hideNewCommentBox()" id="HideNewCommentBlock">New Comment</button>
-                        <div id="newCommentBox" style="display: none;">
-                            <g:render template="/comments/commentsEntry" bean="${this.posts}"/>
-                        </div>
-                    <div id="postedComments">
-                    <g:findAll in="${Comments}" expr="postId==posts.id">
-                            <ul>
-                                ${it.commentText}<br>
-                            </ul>
+                    <g:render template="/comments/commentsEntry" bean="${this.posts}"/>
 
 
-                    </g:findAll>
-
-                    </div>
-                </div>
             </div>
 
             <g:form resource="${this.posts}" method="DELETE">
@@ -85,62 +61,6 @@
                     x.style.display = "none";
                 }
             }
-
-            function hideNewCommentBox(){
-                var x = document.getElementById("newCommentBox");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
         </script>
-    <script type="text/javascript">
-        $(function(){
-            var updateCommentList = function(){
-                $.ajax({
-                    data: "postId=${posts.id}",
-                    url : 'jdbc:mysql://localhost:3306/blog',
-                    success: function(data){
-                        $("#commentsArea").slideUp();
-                        $("#commentList").html("")
-                        $.each(data, function(){
-                            $("#commentList").append("<li><div><span class='nameComment'>" + this.name + "</span</div></li>").slideDown()
-                        });
-                    }
-                })
-            }
-
-            $("#commentsArea, #commentList").hide()
-            updateCommentList();
-
-            $("#addComment").click(function(evt){
-                evt.preventDefault()
-                $("#commentMessage, #commentErrors").html("").hide()
-               $("#commentsArea form")[0].reset()
-                $("#commentsArea").slideDown()
-            });
-            $("#commentSaveForm").submit(function(evt){
-                $("#commentMessage, #commentErrors").html("").hide()
-
-                var $form = $(this)
-                $.ajax({
-                    data: $form.serialize(),
-                    url : $form.attr("action"),
-                    type: $form.attr("method"),
-                    success: function(data){
-                        if(data.success){
-                            $("#commentMessage").text(data.message).show()
-                            updateCommentList();
-                        }else{
-                            $.each(data.errors.errors, function(){
-                                $("#commentErrors").append("<li>" + this.message + "</li>").show()
-                            })
-                        }
-                    }
-                });
-                return false;
-            });
-        });
     </body>
 </html>

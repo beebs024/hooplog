@@ -6,12 +6,16 @@
 
 <div class="col-md-12" id="commentSection" style="display: none">
     <g:render template="/comments/commentsForm" bean="${com.manifest.corp.Posts}" var="Post"/>
-</div>
-<ul id="commentList"></ul>
+</div><br><br>
+<ul id="commentList">
+<g:findAll in="${Comments}" expr="postId==posts.id">
+        ${it.commentText}<br>
+</g:findAll>
+</ul>
 
 <script type="text/javascript">
     $(function () {
-        $("#displayCommentTextBox").click(function (evt) {
+        $("#displayCommentTextBox").on("click",function() {
             $("#commentSection").toggle()
         });
         var updateCommentList = function () {
@@ -20,11 +24,11 @@
                 url: '<g:createLink action="list" controller="comments"/>',
                 success: function (data) {
                     $("#commentSection").slideUp();
-                    $("#commentList").html("");
+                    /*$("#commentList").html("");*/
                     $.each(data, function () {
                         $("#commentList").append("<li class='commentItem col-md-8 col-md-offset-2 commentItem'>" +
                             "<div><span class='dataComment'>" + this.dateCreated + "</span></div>" +
-                            "<span>" + this.comment + "</span></li>").slideDown()
+                            "<span>" + this.commentText + "</span></li>").slideDown()
                     });
                 }
 
@@ -32,7 +36,7 @@
         };
         updateCommentList();
 
-        $("#commentsForm").submit(function (evt) {
+        $("#commentsForm").on("submit",function() {
             var $form = $(this);
 
             $.ajax({

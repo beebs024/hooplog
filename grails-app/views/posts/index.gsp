@@ -16,7 +16,6 @@
         }
          .portalLink{
                 margin-bottom: 40px;
-                border: 3px dotted #000000;
             }
         </style>
 

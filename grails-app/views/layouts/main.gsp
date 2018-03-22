@@ -32,7 +32,12 @@
             margin-bottom: 10px;
             border-radius: 30px;
             padding: 10px;
-            background-color: rgba(255, 0, 0, 0.66);
+            background-color: rgba(0, 0, 0, 0.66);
+            border: 3px dotted #44c6ff;
+        }
+        div#displayCommentTextBox{
+            color: #020101;
+            background-color: #1bf0ff;
         }
         textarea{
             display: block;
@@ -50,7 +55,12 @@
             text-indent: 30px;
             color: #1bf0ff;
         }
+    ul{
+        color: #1bf0ff;
+        padding:10px;
+    }
     </style>
+
 </head>
 <body>
 
