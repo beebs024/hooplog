@@ -8,7 +8,7 @@
 
     <div class="row" id="commentInput">
         <label class="col-md-1 col-md-offset-3">Comment:</label>
-        <g:textArea name="comment" id="CommentText"/>
+        <g:textArea name="commentText" id="commentText"/>
     </div>
 
     <div class="row" id="submitButton">

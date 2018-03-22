@@ -32,7 +32,7 @@
         };
         updateCommentList();
 
-        $("#commentForm").submit(function (evt) {
+        $("#commentsForm").submit(function (evt) {
             var $form = $(this);
 
             $.ajax({
