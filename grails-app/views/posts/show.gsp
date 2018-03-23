@@ -13,10 +13,6 @@
             color: #1bf0ff;
             text-align: center;
         }
-        button#HideComments, button#HideNewCommentBlock, button#addComment{
-                border-radius: 15px;
-                padding: 5px;
-            }
 
         </style>
         <g:javascript library="jquery"/>

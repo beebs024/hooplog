@@ -15,7 +15,7 @@
     <style>
 
         body, html{
-            background-image: url("https://planning-org-uploaded-media.s3.amazonaws.com/image/Awards-2016-Downtown-Columbus-Riverfront-02.png");
+            background-image: url("https://www.columbusunderground.com/wp-content/themes/patterns/timthumb.php?src=https%3A%2F%2Fwww.columbusunderground.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fdowntown-columbus.jpg&q=90&w=650&zc=1&");
             height: 100%
             background-position: center;
             background-repeat: no-repeat;
@@ -35,6 +35,10 @@
             background-color: rgba(0, 0, 0, 0.66);
             border: 3px dotted #44c6ff;
         }
+        label{
+            color: #1bf0ff;
+            text-indent: 10%;
+        }
         div#displayCommentTextBox{
             color: #020101;
             background-color: #1bf0ff;
@@ -43,10 +47,18 @@
             display: block;
             text-wrap: normal;
             resize: none;
+            color: #1bf0ff;
+            background-color: #000000;
             width: 80%;
-            opacity: .9;
+            opacity: .5;
             margin-left: auto;
             margin-right: auto;
+            outline: none;
+        }
+        textarea:focus{
+            outline: none;
+            color: #1bf0ff;
+            background-color: #000000;
         }
         h1{
             color: #1bf0ff;
@@ -55,10 +67,13 @@
             text-indent: 30px;
             color: #1bf0ff;
         }
-    ul{
-        color: #1bf0ff;
-        padding:10px;
-    }
+        ul{
+            color: #1bf0ff;
+            padding:10px;
+        }
+        div#ogCommentList{
+            color: #1bf0ff;
+        }
     </style>
 
 </head>

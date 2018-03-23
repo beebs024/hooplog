@@ -11,7 +11,7 @@ class Posts {
     static mapping = {
         table 'posts'
         version false
-        id column: 'user_ID'
+        id column: 'Comment_ID'
         title column: 'Post_Title'
         postText column: 'Post_Text', sqlType: 'TEXT'
         postId column: 'Post_ID'

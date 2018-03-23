@@ -5,15 +5,9 @@
         <g:set var="entityName" value="${message(code: 'posts.label', default: 'Posts')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
         <style>
-        textarea{
-            color: #1bf0ff;
-            width: 80%;
-            position: center;
-            height: 75%;
-            overflow: hidden;
-            border: none;
-            background-color: rgba(27, 240, 255, 0);
-        }
+            textarea{
+                color: rgba(0, 0, 0, 0.6);
+            }
          .portalLink{
                 margin-bottom: 40px;
             }

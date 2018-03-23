@@ -15,6 +15,15 @@ class CommentsController {
         respond commentsService.list(params), model:[commentsCount: commentsService.count()]
     }
 
+    def list(){
+        def comments = []
+        Posts blogPost = Posts.get(params.postId)
+        if(blogPost) {
+            comments = Comments.findAllByPostId(blogPost.id)
+        }
+        render comments as JSON
+    }
+
     def show(Long id) {
         respond commentsService.get(id)
     }
@@ -43,9 +52,6 @@ class CommentsController {
             }
             '*' { respond comments, [status: CREATED] }
         }
-    }
-    def showJson(Long id) {
-        render commentsService.get(id) as JSON
     }
     def edit(Long id) {
         respond commentsService.get(id)
