@@ -7,12 +7,6 @@
 <div id="commentSection" style="display: none">
     <g:render template="/comments/commentsForm" bean="${com.manifest.corp.Posts}" var="Post"/>
 </div><br>
-
-%{--<ul id="commentList">
-        <g:findAll in="${Comments}" expr="postId==posts.id">
-            ${it.commentText}<br><br>
-        </g:findAll>
-</ul>--}%
 <ul id="commentsList">
 
 </ul>
