@@ -3,7 +3,7 @@ package blog2
 class UrlMappings {
 
     static mappings = {
-        "/$controller/$action?/$id?/$title?"{
+        "/$controller/$action?/$id?/$title?/$datePosted?"{
             constraints {
                 // apply constraints here
             }

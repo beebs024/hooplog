@@ -5,6 +5,7 @@ class Posts {
     String postText
     String author
     public String postId
+    Date datePosted = new Date()
 
     static hasMany = [comments: Comments]
 

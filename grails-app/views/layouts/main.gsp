@@ -15,7 +15,7 @@
     <style>
 
         body, html{
-            background-image: url("https://www.columbusunderground.com/wp-content/themes/patterns/timthumb.php?src=https%3A%2F%2Fwww.columbusunderground.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fdowntown-columbus.jpg&q=90&w=650&zc=1&");
+            background-image: url("https://c1.staticflickr.com/4/3756/13246421715_7ced0a776e_b.jpg");
             height: 100%
             background-position: center;
             background-repeat: no-repeat;
@@ -66,6 +66,10 @@
         h2{
             text-indent: 30px;
             color: #1bf0ff;
+        }
+        input#author, input#title{
+            width: 80%;
+
         }
         ul{
             color: #1bf0ff;

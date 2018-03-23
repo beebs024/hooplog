@@ -11,6 +11,13 @@
                 height: 300px;
                 resize: none;
                 opacity: .8;
+            }
+
+            textarea#author, textarea#title{
+                width: 80%;
+                height: 35px;
+                resize: none;
+                opacity: .6;
 
             }
         </style>
@@ -40,13 +47,14 @@
             </g:hasErrors>
             <g:form resource="${this.posts}" method="POST">
                 <fieldset class="form">
-                    <label>Post Title</label>
-                    <g:textField name="title" id="title"/>
-                    <label>Post Author</label>
-                    <g:textField name="author" id="author"/>
+                    <div class="portalLink">
+                    <label>Post Title</label><br>
+                    <g:textArea name="title" id="title"/><br>
+                    <label>Post Author</label><br>
+                    <g:textArea name="author" id="author"/><br>
                     <label>Post Content</label><br>
                     <g:textArea name="postText" id="postText" columns="40"/>
-
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
