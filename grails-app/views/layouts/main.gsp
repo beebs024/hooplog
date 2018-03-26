@@ -75,6 +75,9 @@
             color: #1bf0ff;
             padding:10px;
         }
+        div#searchLabel{
+            color: #1bf0ff;
+        }
     </style>
     <br><br><div style="font-family: Monaco;font-size: 90px;color:#00ffff; text-align: center;">HOOPLOG</div><br>
     <div style="font-size:12px; color: #e8ffe2; text-align: center;">When you need some hooplah in your life</div>
@@ -85,39 +88,9 @@
 </head>
 <body>
 
-    %{--<div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/#">
-		    <asset:image src="grails.svg" alt="Grails Logo"/>
-                </a>
-            </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
-        </div>
-    </div>--}%
 
     <g:layoutBody/>
 
-
-    %{--<div class="footer" role="contentinfo"></div>--}%
-
-
-
-    %{--<div id="spinner" class="spinner" style="display:none;">
-        <g:message code="spinner.alt" default="Loading&hellip;"/>
-    </div>--}%
-
-    %{--<asset:javascript src="application.js"/>--}%
 
 </body>
 </html>
