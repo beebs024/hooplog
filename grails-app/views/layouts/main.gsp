@@ -76,6 +76,8 @@
             padding:10px;
         }
     </style>
+    <br><br><div style="font-family: Monaco;font-size: 90px;color:#00ffff; text-align: center;">HOOPLOG</div><br>
+    <div style="font-size:12px; color: #e8ffe2; text-align: center;">When you need some hooplah in your life</div>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><g:layoutTitle default="Hooplog"/></title>
@@ -105,6 +107,7 @@
     </div>--}%
 
     <g:layoutBody/>
+
 
     %{--<div class="footer" role="contentinfo"></div>--}%
 

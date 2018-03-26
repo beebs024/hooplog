@@ -49,15 +49,6 @@
                 </fieldset>
             </g:form>
         </div>
-        <script>
-            function hideComments() {
-                var x = document.getElementById("commentsArea");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-        </script>
+
     </body>
 </html>
