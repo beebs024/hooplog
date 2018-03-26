@@ -2,6 +2,7 @@ package com.manifest.corp
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import java.util.regex.*
 
 class PostsController {
 
@@ -9,7 +10,7 @@ class PostsController {
 
     static scaffold = Posts
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -22,6 +23,18 @@ class PostsController {
 
     def create() {
         respond new Posts(params)
+    }
+
+    def list() {
+        params.max = Math.min(params.max ? params.int('max') : 5, 100)
+
+        def postList = Posts.createCriteria().list(params) {
+            if ( params.query ) {
+                ilike("title", "%${params.query}%")
+            }
+        }
+
+        [taskInstanceList: postList, taskInstanceTotal: postList.totalCount]
     }
 
     def save(Posts posts) {

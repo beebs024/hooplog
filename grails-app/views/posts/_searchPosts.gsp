@@ -1,7 +1,12 @@
 <%@ page import="com.manifest.corp.Posts;"%>
-<g:form controller="posts" action="search" name="searchPosts">
-    <div id="searchParameters" style="text-indent: 85%;">
-        <b><div id="searchLabel">SEARCH:</div></b>
-        <g:textArea name="searchBar" id="searchBar" style="height: 40px; margin-left: 85%; width: 15%;"/>
-    </div>
-</g:form>
+<g:if test="${flash.message}">
+    <div class="message" role="status">${flash.message}</div>
+</g:if>
+<fieldset class="form">
+    <g:form controller="Posts" action="index" method="GET">
+        <div class="fieldcontain">
+            <label for="query">Search for tasks:</label>
+            <g:textField name="query" value="${params.query}"/>
+        </div>
+    </g:form>
+</fieldset>

@@ -11,6 +11,11 @@
          .portalLink{
                 margin-bottom: 40px;
             }
+            input, div#pagination{
+                color: #000000;
+                background-color: #1bf0ff;
+                border-radius: 15px;
+            }
         </style>
 
     </head>
@@ -22,9 +27,12 @@
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
+
         <div id="searchBar">
-            <g:render template="/posts/searchPosts" bean="${postsLists}"/>
+            <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
         </div>
+    </fieldset>
+
         <div id="list-posts" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
@@ -44,7 +52,7 @@
                     </div>
                 </div>
             </g:each>
-            <div class="pagination">
+            <div class="pagination" id="pagination">
                 <g:paginate total="${postsCount ?: 0}" />
             </div>
         </div>

@@ -54,7 +54,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.posts}" method="PUT">
+            <g:form resource="${this.posts}" method="POST">
                 <g:hiddenField name="version" value="${this.posts?.version}" />
                 <fieldset class="form">
                     <g:textArea name="postText" id="postText" value="${posts.postText}"/>
