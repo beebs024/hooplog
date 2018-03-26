@@ -20,6 +20,10 @@
                 opacity: .6;
 
             }
+            div#postContent, div#postAuthorLabel, div#postTitleLabel{
+                color: #44c6ff;
+                text-indent: 10%;
+            }
         </style>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'posts.label', default: 'Posts')}" />
@@ -48,12 +52,12 @@
             <g:form resource="${this.posts}" method="POST">
                 <fieldset class="form">
                     <div class="portalLink">
-                    <label>Post Title</label><br>
+                    <b><div id="postTitleLabel">Post Title</div></b>
                     <g:textArea name="title" id="title"/><br>
-                    <label>Post Author</label><br>
+                    <b><div id="postAuthorLabel">Post Author</div></b>
                     <g:textArea name="author" id="author"/><br>
-                    <label>Post Content</label><br>
-                    <g:textArea name="postText" id="postText" columns="40"/>
+                    <b><div id="postContent">Post Content</div></b>
+                    <g:textArea name="postText" id="postText" columns="40"/><br>
                     </div>
                 </fieldset>
                 <fieldset class="buttons">
