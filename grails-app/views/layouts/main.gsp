@@ -82,6 +82,17 @@
             color: #000000;
             background-color: #1bf0ff;
         }
+    a.edit, input.delete{
+        color: #000000;
+        background-color: #1bf0ff;
+    }
+    fieldset.buttons{
+        background-color: rgba(27, 240, 255, 0);
+        color: #000000;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+    }
     </style>
     <br><br><div style="font-family: Monaco;font-size: 90px;color:#00ffff; text-align: center;">HOOPLOG</div><br>
     <div style="font-size:12px; color: #e8ffe2; text-align: center;">When you need some hooplah in your life</div>
