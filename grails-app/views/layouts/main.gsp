@@ -16,7 +16,7 @@
 
         body, html{
             background-image: url("https://c1.staticflickr.com/4/3756/13246421715_7ced0a776e_b.jpg");
-            height: 100%
+            height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -59,8 +59,10 @@
             color: #1bf0ff;
             background-color: #000000;
         }
-        h1{
+        h1, .content h1{
             color: #1bf0ff;
+            text-underline: none;
+            border-bottom: none;
         }
         h2{
             text-indent: 30px;
