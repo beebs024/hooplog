@@ -43,20 +43,22 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <g:each in="${postsList.reverse()}">
-                <div class="portalLink row">
-                    <h1><b><u>${it.title}</u></b></h1>
-                    <h2>By: ${it.author}</h2>
-                    <div class="container"></div>
-                    <g:textArea name="postText" value="${it.postText}" readonly="true"/>
-                    <div class="container">
-                        <div class="col-sm-1">
-                            <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title, date: it.datePosted]}"><input type="button" value="Show">
-                            </g:link>
+            <g:if test="${postsList!=null}">
+                <g:each in="${postsList.reverse()}">
+                    <div class="portalLink row">
+                        <h1><b><u>${it.title}</u></b></h1>
+                        <h2>By: ${it.author}</h2>
+                        <div class="container"></div>
+                        <g:textArea name="postText" value="${it.postText}" readonly="true"/>
+                        <div class="container">
+                            <div class="col-sm-1">
+                                <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title, date: it.datePosted]}"><input type="button" value="Show">
+                                </g:link>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </g:each>
+                </g:each>
+            </g:if>
             <div class="pagination" id="pagination">
                 <g:paginate total="${postsCount ?: 0}" params="${params}" />
             </div>
