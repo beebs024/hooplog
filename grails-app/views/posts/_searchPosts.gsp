@@ -5,8 +5,7 @@
 <fieldset class="form">
     <g:form action="index" method="GET">
         <div class="fieldcontain">
-            <label for="query">Search for posts:</label>
-            <g:textField name="query" value="${params.query}"/>
+            <g:textField name="query" value="${params.query}" placeholder="Search for posts" stlye="margin-left: 85%;"/>
         </div>
     </g:form>
 </fieldset>

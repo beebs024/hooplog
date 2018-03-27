@@ -21,7 +21,8 @@
     </head>
     <body>
         <a href="#list-posts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
+
+    <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
@@ -29,14 +30,8 @@
         </div>
 
         <div id="searchBar">
-            %{--<g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>--}%
-            <g:form action="index" method="GET">
-                <div class="fieldcontain">
-                    <g:textField name="query" value="${params.query}" placeholder="Search for posts"/>
-                </div>
-            </g:form>
+            <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
         </div>
-    </fieldset>
 
         <div id="list-posts" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>

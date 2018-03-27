@@ -69,7 +69,6 @@
         }
         input#author, input#title{
             width: 80%;
-
         }
         ul{
             color: #1bf0ff;
@@ -77,6 +76,11 @@
         }
         div#searchLabel{
             color: #1bf0ff;
+        }
+        input#query{
+            margin-left: 90%;
+            color: #000000;
+            background-color: #1bf0ff;
         }
     </style>
     <br><br><div style="font-family: Monaco;font-size: 90px;color:#00ffff; text-align: center;">HOOPLOG</div><br>
