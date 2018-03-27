@@ -21,9 +21,8 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        a.home, a.create, a.list{
+        a.home, a.create, a.list, input.save{
             display: block;
-            margin-left: auto;
             margin-right: auto;
             color: #000000;
             background-color: #1bf0ff;
