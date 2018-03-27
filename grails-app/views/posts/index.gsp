@@ -29,7 +29,12 @@
         </div>
 
         <div id="searchBar">
-            <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
+            %{--<g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>--}%
+            <g:form action="index" method="GET">
+                <div class="fieldcontain">
+                    <g:textField name="query" value="${params.query}" placeholder="Search for posts"/>
+                </div>
+            </g:form>
         </div>
     </fieldset>
 
@@ -53,7 +58,7 @@
                 </div>
             </g:each>
             <div class="pagination" id="pagination">
-                <g:paginate total="${postsCount ?: 0}" />
+                <g:paginate total="${postsCount ?: 0}" params="${params}" />
             </div>
         </div>
     </body>

@@ -12,10 +12,10 @@ class PostsController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index(Integer max) {
+    /*def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond postsService.list(params), model:[postsCount: postsService.count()]
-    }
+    }*/
 
     def show(Long id) {
         respond postsService.get(id)
@@ -25,16 +25,16 @@ class PostsController {
         respond new Posts(params)
     }
 
-    def list() {
+    def index() {
         params.max = Math.min(params.max ? params.int('max') : 5, 100)
 
-        def postList = Posts.createCriteria().list(params) {
+        def postsList = Posts.createCriteria().list(params) {
             if ( params.query ) {
                 ilike("title", "%${params.query}%")
             }
         }
 
-        [taskInstanceList: postList, taskInstanceTotal: postList.totalCount]
+        respond postsList, model:[postsCount: postsList.totalCount]
     }
 
     def save(Posts posts) {
