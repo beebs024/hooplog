@@ -10,7 +10,7 @@ class PostsController {
 
     static scaffold = Posts
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
     /*def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -89,7 +89,7 @@ class PostsController {
         }
     }
 
-    /*@Secured(["ROLE_BLOGGER"])*/
+    @Secured(["ROLE_BLOGGER"])
     def delete(Long id) {
         if (id == null) {
             notFound()
