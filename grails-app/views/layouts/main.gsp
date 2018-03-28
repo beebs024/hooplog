@@ -47,17 +47,17 @@
             text-wrap: normal;
             resize: none;
             color: #1bf0ff;
-            background-color: #000000;
+            background-color: rgba(0, 0, 0, 0);
             width: 80%;
-            opacity: .5;
             margin-left: auto;
             margin-right: auto;
             outline: none;
+
         }
         textarea:focus{
             outline: none;
             color: #1bf0ff;
-            background-color: #000000;
+            background-color: rgba(0, 0, 0, 0);
         }
         h1, .content h1{
             color: #1bf0ff;

@@ -6,7 +6,14 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
         <style>
             textarea{
-                color: rgba(0, 0, 0, 0.6);
+                border: none;
+                outline: none;
+            }
+            textarea:focus{
+                glow: none;
+                box-shadow: none;
+                outline: none;
+                border: none;
             }
          .portalLink{
                 margin-bottom: 40px;
@@ -40,7 +47,7 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:if test="${postsList!=null}">
-                <g:each in="${postsList.reverse()}">
+                <g:each in="${postsList}">
                     <div class="portalLink row">
                         <h1><b><u>${it.title}</u></b></h1>
                         <h2>By: ${it.author}</h2>

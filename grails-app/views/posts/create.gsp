@@ -1,3 +1,4 @@
+<%@ page import="com.manifest.corp.User" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,14 +11,12 @@
                 width: 100%;
                 height: 300px;
                 resize: none;
-                opacity: .8;
             }
 
             textarea#author, textarea#title{
                 width: 80%;
                 height: 35px;
                 resize: none;
-                opacity: .6;
 
             }
             div#postContent, div#postAuthorLabel, div#postTitleLabel{
@@ -49,6 +48,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
+
             <g:form resource="${this.posts}" method="POST">
                 <fieldset class="form">
                     <div class="portalLink">

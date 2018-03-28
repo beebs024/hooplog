@@ -16,6 +16,7 @@ class Posts {
         title column: 'Post_Title'
         postText column: 'Post_Text', sqlType: 'TEXT'
         postId column: 'Post_ID'
+        sort datePosted: "desc"
     }
 
     static constraints = {

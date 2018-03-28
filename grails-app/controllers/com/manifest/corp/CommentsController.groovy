@@ -3,6 +3,7 @@ package com.manifest.corp
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.converters.*
+import org.springframework.security.access.annotation.Secured
 
 class CommentsController {
 
@@ -28,10 +29,12 @@ class CommentsController {
         respond commentsService.get(id)
     }
 
+    @Secured(["ROLE_BLOGGER, ROLE_COMMENTER"])
     def create() {
         respond new Comments(params)
     }
 
+    @Secured(["ROLE_BLOGGER, ROLE_COMMENTER"])
     def save(Comments comments) {
         if (comments == null) {
             notFound()
@@ -53,10 +56,13 @@ class CommentsController {
             '*' { respond comments, [status: CREATED] }
         }
     }
+
+    @Secured(["ROLE_BLOGGER, ROLE_COMMENTER"])
     def edit(Long id) {
         respond commentsService.get(id)
     }
 
+    @Secured(["ROLE_BLOGGER, ROLE_COMMENTER"])
     def update(Comments comments) {
         if (comments == null) {
             notFound()
@@ -79,6 +85,7 @@ class CommentsController {
         }
     }
 
+    @Secured(["ROLE_BLOGGER, ROLE_COMMENTER"])
     def delete(Long id) {
         if (id == null) {
             notFound()
@@ -106,6 +113,7 @@ class CommentsController {
         }
     }
 
+    @Secured(["ROLE_BLOGGER, ROLE_COMMENTER"])
     def updateComments(){
         def comment = params.values()
         render "${comment}"
