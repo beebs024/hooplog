@@ -32,10 +32,8 @@ class BootStrap {
         def bloggerRole = new Role(authorities: 'ROLE_BLOGGER').save(flush: true)
         def commenterRole = new Role(authorities: 'ROLE_COMMENTER').save(flush: true)
 
-
         UserRole.create user1, bloggerRole, true
         UserRole.create user2, commenterRole, true
-
     }
     def destroy = {
     }

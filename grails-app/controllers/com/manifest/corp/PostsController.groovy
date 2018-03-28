@@ -2,7 +2,7 @@ package com.manifest.corp
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
-import java.util.regex.*
+import org.springframework.security.access.annotation.Secured
 
 class PostsController {
 
@@ -20,7 +20,7 @@ class PostsController {
     def show(Long id) {
         respond postsService.get(id)
     }
-
+    @Secured(value="hasRole('ROLE_BLOGGER') or hasRole('ROLE_COMMENTER')")
     def create() {
         respond new Posts(params)
     }
