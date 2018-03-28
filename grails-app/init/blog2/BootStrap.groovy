@@ -3,6 +3,8 @@ package blog2
 import com.manifest.corp.Comments
 import com.manifest.corp.Posts
 import com.manifest.corp.User
+import com.manifest.corp.UserRole
+import com.manifest.corp.Role
 import org.springframework.beans.factory.annotation.Autowired
 
 class BootStrap {
@@ -27,6 +29,11 @@ class BootStrap {
         def post11= new Posts(postText: 'sad', author: 'Matthew Beebe', postId: '1', title: 'Do not be glad, get').save()
         def post12= new Posts(postText: 'very sad', author: 'Tom Yeager', postId: '2', title: 'not quit super sad, but').save()
 
+        def bloggerRole = new Role(authority: 'ROLE_BLOGGER').save(flush: true)
+        def commenterRole = new Role(authority: 'ROLE_COMMENTER').save(flush: true)
+
+        UserRole.create user1, bloggerRole, true
+        UserRole.create user2, commenterRole, true
     }
     def destroy = {
     }

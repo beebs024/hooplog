@@ -1,26 +1,33 @@
 package com.manifest.corp
 
-class User {
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+import grails.compiler.GrailsCompileStatic
 
-    String firstName
-    String lastName
+@GrailsCompileStatic
+@EqualsAndHashCode(includes='username')
+@ToString(includes='username', includeNames=true, includePackage=false)
+class User implements Serializable {
+
+    private static final long serialVersionUID = 1
+
     String username
-    String userId = UUID.randomUUID().toString()
     String password
+    boolean enabled = true
+    boolean accountExpired
+    boolean accountLocked
+    boolean passwordExpired
 
-    static mapping = {
-        table 'user'
-        version false
-        firstName column: 'First_Name'
-        lastName column: 'Last_Name'
-        username column: 'Username'
+    Set<Role> getAuthorities() {
+        (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
     }
 
     static constraints = {
-        userId display: false
-        password password:true
-        firstName blank:false
-        lastName blank:false
-        username blank:false
+        password nullable: false, blank: false, password: true
+        username nullable: false, blank: false, unique: true
+    }
+
+    static mapping = {
+	    password column: '`password`'
     }
 }
