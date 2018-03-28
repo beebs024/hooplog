@@ -20,7 +20,8 @@ class PostsController {
     def show(Long id) {
         respond postsService.get(id)
     }
-    @Secured(value="hasRole('ROLE_BLOGGER') or hasRole('ROLE_COMMENTER')")
+
+    @Secured(["ROLE_BLOGGER"])
     def create() {
         respond new Posts(params)
     }
@@ -37,6 +38,7 @@ class PostsController {
         respond postsList, model:[postsCount: postsList.totalCount]
     }
 
+    @Secured(["ROLE_BLOGGER"])
     def save(Posts posts) {
         if (posts == null) {
             notFound()
@@ -59,10 +61,12 @@ class PostsController {
         }
     }
 
+    @Secured(["ROLE_BLOGGER"])
     def edit(Long id) {
         respond postsService.get(id)
     }
 
+    @Secured(["ROLE_BLOGGER"])
     def update(Posts posts) {
         if (posts == null) {
             notFound()
@@ -85,6 +89,7 @@ class PostsController {
         }
     }
 
+    @Secured(["ROLE_BLOGGER"])
     def delete(Long id) {
         if (id == null) {
             notFound()

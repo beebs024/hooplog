@@ -5,16 +5,16 @@ import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
 
 @GrailsCompileStatic
-@EqualsAndHashCode(includes='authorities')
-@ToString(includes='authorities', includeNames=true, includePackage=false)
+@EqualsAndHashCode(includes='authority')
+@ToString(includes='authority', includeNames=true, includePackage=false)
 class Role implements Serializable {
 
 	private static final long serialVersionUID = 1
 
-	String authorities
+	String authority
 
 	static constraints = {
-		authorities nullable: false, blank: false, unique: true
+		authority nullable: false, blank: false, unique: true
 	}
 
 	static mapping = {
