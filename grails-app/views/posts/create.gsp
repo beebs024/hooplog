@@ -54,8 +54,7 @@
                     <div class="portalLink">
                     <b><div id="postTitleLabel">Post Title</div></b>
                     <g:textArea name="title" id="title"/><br>
-                    <b><div id="postAuthorLabel">Post Author</div></b>
-                    <g:textArea name="author" id="author"/><br>
+                    <g:hiddenField name="author" id="author" value="${sec.username()}"/>
                     <b><div id="postContent">Post Content</div></b>
                     <g:textArea name="postText" id="postText" columns="40"/><br>
                     </div>

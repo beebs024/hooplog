@@ -94,6 +94,9 @@
         border: 0;
         box-shadow: none;
     }
+    div#loginOrOut{
+        margin-left: 95%;
+    }
     </style>
     <br><br><div style="font-family: Monaco;font-size: 90px;color:#00ffff; text-align: center;">HOOPLOG</div><br>
     <div style="font-size:12px; color: #e8ffe2; text-align: center;">When you need some hooplah in your life</div>
@@ -101,6 +104,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><g:layoutTitle default="Hooplog"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <div id="loginOrOut">
+        <sec:ifNotLoggedIn>
+            <a class="login" href="${createLink(uri: '/login/auth')}"><input type="button" value="Login"></a>
+        </sec:ifNotLoggedIn>
+
+        <sec:ifLoggedIn>
+            <a class="logout" href="${createLink(uri: '/logout')}"><input type="button" value="Logout"></a>
+        </sec:ifLoggedIn>
+    </div>
+
 </head>
 <body>
 
