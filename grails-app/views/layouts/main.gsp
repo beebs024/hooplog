@@ -107,6 +107,7 @@
         background-color: rgba(20, 44, 133, 0);
         border: none;
         box-shadow: none;
+        width: 25%;
     }
 
         div#login .inner .fheader{
