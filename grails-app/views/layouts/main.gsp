@@ -83,18 +83,18 @@
             color: #000000;
             background-color: #1bf0ff;
         }
-    a.edit, input.delete{
-        color: #000000;
-        background-color: #1bf0ff;
-    }
-    fieldset.buttons{
-        background-color: rgba(27, 240, 255, 0);
-        color: #000000;
-        outline: none;
-        border: 0;
-        box-shadow: none;
-    }
-        input{
+        a.edit, input.delete{
+            color: #000000;
+            background-color: #1bf0ff;
+        }
+        fieldset.buttons{
+            background-color: rgba(27, 240, 255, 0);
+            color: #000000;
+            outline: none;
+            border: 0;
+            box-shadow: none;
+        }
+        input#loginButton, input#logoutButton{
             color: #000000;
             background-color: #1bf0ff;
             border-radius: 15px;
@@ -112,11 +112,11 @@
 
     <div id="loginOrOut">
         <sec:ifNotLoggedIn>
-            <a class="login" href="${createLink(uri: '/login/auth')}"><input type="button" value="Login"></a>
+            <a class="login" href="${createLink(uri: '/login/auth')}"><input type="button" id="loginButton" value="Login"></a>
         </sec:ifNotLoggedIn>
 
         <sec:ifLoggedIn>
-            <a class="logout" href="${createLink(uri: '/logout')}"><input type="button" value="Logout"></a>
+            <a class="logout" href="${createLink(uri: '/logout')}"><input type="button" id="logoutButton" value="Logout"></a>
         </sec:ifLoggedIn>
     </div>
 
