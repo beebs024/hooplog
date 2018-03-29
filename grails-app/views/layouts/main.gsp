@@ -94,6 +94,11 @@
         border: 0;
         box-shadow: none;
     }
+        input{
+            color: #000000;
+            background-color: #1bf0ff;
+            border-radius: 15px;
+        }
     div#loginOrOut{
         margin-left: 95%;
     }

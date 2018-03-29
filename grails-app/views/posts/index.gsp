@@ -15,7 +15,7 @@
                 outline: none;
                 border: none;
             }
-         .portalLink{
+            .portalLink{
                 margin-bottom: 40px;
             }
             input, div#pagination{
