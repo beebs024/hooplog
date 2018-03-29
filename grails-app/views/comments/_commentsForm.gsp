@@ -6,6 +6,10 @@
         <g:textField class="col-md-2 " name="name"/>--}%
     </div>
 
+    <div class="row" id="commenterName">
+        <g:hiddenField name="commenter" value="${sec.username()}"/>
+    </div>
+
     <div id="commentInput">
         <label>Comment:</label>
         <g:textArea name="commentText" id="commentText"/>

@@ -99,23 +99,23 @@
             background-color: #1bf0ff;
             border-radius: 15px;
         }
-    div#loginOrOut{
-        margin-left: 95%;
-    }
+        div#loginOrOut{
+            margin-left: 95%;
+        }
 
-    form#loginForm, div#login .inner{
-        background-color: rgba(20, 44, 133, 0);
-        border: none;
-        box-shadow: none;
-        width: 25%;
-    }
-
-        div#login .inner .fheader{
+        form#loginForm, div#login .inner{
             background-color: rgba(20, 44, 133, 0);
             border: none;
             box-shadow: none;
-            color: #1bf0ff;
+            width: 25%;
         }
+
+            div#login .inner .fheader{
+                background-color: rgba(20, 44, 133, 0);
+                border: none;
+                box-shadow: none;
+                color: #1bf0ff;
+            }
     </style>
     <br><br><div style="font-family: Monaco;font-size: 90px;color:#00ffff; text-align: center;">HOOPLOG</div><br>
     <div style="font-size:12px; color: #e8ffe2; text-align: center;">When you need some hooplah in your life</div>

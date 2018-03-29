@@ -1,5 +1,6 @@
 <asset:javascript src="jquery-2.2.0.min.js"/>
 <%@ page import="com.manifest.corp.Posts; com.manifest.corp.Comments" %>
+<sec:ifAnyGranted roles="ROLE_BLOGGER, ROLE_COMMENTER">
 <div>
     <div class="btn btn-default btn-success" id="displayCommentTextBox">Post A Comment</div>
 </div>
@@ -7,6 +8,7 @@
 <div id="commentSection" style="display: none">
     <g:render template="/comments/commentsForm" bean="${com.manifest.corp.Posts}" var="Post"/>
 </div><br>
+    </sec:ifAnyGranted>
 <ul id="commentsList">
 
 </ul>
@@ -25,7 +27,7 @@
                     $.each(data, function () {
                         $("#commentsList").append("<li>" +
                             "<div><span class='dataComment'>" + this.datePosted + "</span></div>" +
-                            "<span>" + this.commentText + "</span></li>").slideDown()
+                            "<span>" + this.commentText + "</span>" + "<br><span> -" + this.commenter + "</span></li>").slideDown()
                     });
                 }
 

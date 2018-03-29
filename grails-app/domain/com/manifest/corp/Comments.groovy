@@ -5,6 +5,7 @@ class Comments {
     String commentText
     String postId
     Date datePosted = new Date()
+    String commenter
 
 
     static belongsTo = Posts
