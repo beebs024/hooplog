@@ -1,3 +1,4 @@
+<%@ page import="com.manifest.corp.User" %>
 <!DOCTYPE html>
 <html>
     <head>

@@ -90,6 +90,7 @@ class PostsController {
     }
 
     @Secured(["ROLE_BLOGGER"])
+
     def delete(Long id) {
         if (id == null) {
             notFound()

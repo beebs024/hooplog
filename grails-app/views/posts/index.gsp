@@ -23,26 +23,22 @@
                 background-color: #1bf0ff;
                 border-radius: 15px;
             }
-            li#searchBar{
-                margin-left: 75%;
-
-            }
         </style>
 
     </head>
     <body>
         <a href="#list-posts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-    <div class="nav" role="navigation">
+    <div class="nav" role="navigation" id="navbar">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <sec:ifAnyGranted roles="ROLE_BLOGGER">
                     <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
-                <li id="searchBar">
-                    <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
-                </li>
             </ul>
+        </div>
+        <div class="search" role="search">
+                <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
         </div>
 
 

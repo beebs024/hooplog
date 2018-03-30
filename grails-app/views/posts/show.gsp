@@ -19,7 +19,7 @@
     </head>
     <body>
         <a href="#show-posts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
+        <div class="nav" role="navigation" id="navbar">
             <ul>
 
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>

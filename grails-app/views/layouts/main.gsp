@@ -27,6 +27,10 @@
             color: #000000;
             background-color: #1bf0ff;
         }
+
+        div#navbar{
+            margin-left: 2%;
+        }
         .portalLink{
             margin-bottom: 10px;
             border-radius: 30px;
@@ -101,6 +105,7 @@
         }
         div#loginOrOut{
             margin-left: 95%;
+            margin-right: 5%;
         }
 
         form#loginForm, div#login .inner{
