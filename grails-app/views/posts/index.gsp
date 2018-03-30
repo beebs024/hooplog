@@ -23,6 +23,10 @@
                 background-color: #1bf0ff;
                 border-radius: 15px;
             }
+            li#searchBar{
+                margin-left: 75%;
+
+            }
         </style>
 
     </head>
@@ -35,15 +39,16 @@
                 <sec:ifAnyGranted roles="ROLE_BLOGGER">
                     <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
+                <li id="searchBar">
+                    <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
+                </li>
             </ul>
         </div>
 
-        <div id="searchBar">
-            <g:render template="/posts/searchPosts" bean="${postsList}" var="postsList"/>
-        </div>
+
 
         <div id="list-posts" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            %{--<h1><g:message code="default.list.label" args="[entityName]" /></h1>--}%
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>

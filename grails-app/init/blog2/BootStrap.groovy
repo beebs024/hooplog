@@ -10,7 +10,7 @@ class BootStrap {
 
     def init = { servletContext ->
         def post1= new Posts(postText: 'sad', author: 'Matthew Beebe', postId: '1', title: 'Do not be glad, get').save()
-        def post2= new Posts(postText: 'very sad', author: 'Tom Yeager', postId: '2', title: 'not quit super sad, but').save()
+        def post2= new Posts(postText: 'very sad', author: 'Tom Yeager', postId: '2', title: 'not quit(e) super sad, but').save()
         def user1= new User(username: 'mbeebe', password: 'abc123').save()
         def user2= new User(firstName:'Tom', lastName: 'Yeager', username: 'tyeager', password: 'abc321', userId: ';lksdfggerdaglkdsa').save()
         def comment1= new Comments(commentText:'this is very sad', postId: '1', commenter: 'Smitty Von Yeager Man Jenson').save()

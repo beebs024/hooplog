@@ -26,7 +26,7 @@
                     $("#commentsList").html("");
                     $.each(data, function () {
                         $("#commentsList").append("<li>" +
-                            "<div><span class='dataComment'>" + this.datePosted + "</span></div>" +
+                            "<div><span class='dataComment'> date Posted: " + this.datePosted + "</span></div>" +
                             "<span>" + this.commentText + "</span>" + "<br><span> -" + this.commenter + "</span></li>").slideDown()
                     });
                 }
