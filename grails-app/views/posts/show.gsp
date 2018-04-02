@@ -21,21 +21,18 @@
         <a href="#show-posts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation" id="navbar">
             <ul>
-
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 
             </ul>
         </div>
         <div id="show-posts" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <div class="portalLink">
-                <h1><b><u>${posts.title}</u></b></h1>
-                <h2>By: ${posts.author}</h2>
-                <h3>${posts.postText}</h3>
+                <h1 id="title"><b><u>${posts.title}</u></b></h1>
+                <h2 id="author">By: ${posts.author}</h2>
+                <h3 id="body">${posts.postText}</h3>
 
                         <g:render template="/comments/commentsEntry" bean="${this.posts}"/>
 

@@ -29,9 +29,8 @@
     <body>
         <a href="#list-posts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-    <div class="nav" role="navigation" id="navbar">
+        <div class="nav" role="navigation" id="navbar">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <sec:ifAnyGranted roles="ROLE_BLOGGER">
                     <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </sec:ifAnyGranted>
@@ -57,7 +56,7 @@
                         <g:textArea name="postText" value="${it.postText}" readonly="true"/>
                         <div class="container">
                             <div class="col-sm-1">
-                                <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title, date: it.datePosted]}"><input type="button" value="Show">
+                                <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title, date: it.datePosted]}"><input type="button" value="Show" id="ShowPost">
                                 </g:link>
                             </div>
                         </div>
