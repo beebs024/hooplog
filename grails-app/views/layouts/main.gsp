@@ -75,7 +75,7 @@
         input#author, input#title{
             width: 80%;
         }
-        ul{
+        ul, li{
             color: #1bf0ff;
             padding:10px;
         }
@@ -145,6 +145,8 @@
 
     <g:layoutBody/>
 
-
+<footer>
+    <a class="create" href="${createLink(uri: '/user/create')}"> <input type="button" id="createUserButton" value="createUser"/></a>
+</footer>
 </body>
 </html>

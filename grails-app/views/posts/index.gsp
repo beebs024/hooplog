@@ -57,7 +57,7 @@
                         <g:textArea name="postText" value="${it.postText}" readonly="true"/>
                         <div class="container">
                             <div class="col-sm-1">
-                                <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title, date: it.datePosted]}"><input type="button" value="Show">
+                                <g:link class="show" action="show" resource="${this.postText}" id="${it.id}" params="${[title: it.title, date: it.datePosted]}"><input type="button" value="Show" id="ShowPost">
                                 </g:link>
                             </div>
                         </div>

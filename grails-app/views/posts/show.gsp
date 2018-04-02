@@ -28,14 +28,13 @@
             </ul>
         </div>
         <div id="show-posts" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <div class="portalLink">
-                <h1><b><u>${posts.title}</u></b></h1>
+                <h1 id="title">${posts.title}</h1>
                 <h2>By: ${posts.author}</h2>
-                <h3>${posts.postText}</h3>
+                <h3 id="body">${posts.postText}</h3>
 
                         <g:render template="/comments/commentsEntry" bean="${this.posts}"/>
 
