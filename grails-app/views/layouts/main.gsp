@@ -75,7 +75,7 @@
         input#author, input#title{
             width: 80%;
         }
-        ul, li{
+        ul{
             color: #1bf0ff;
             padding:10px;
         }
@@ -144,9 +144,10 @@
 
 
     <g:layoutBody/>
-
+<sec:ifNotLoggedIn>
 <footer>
     <a class="create" href="${createLink(uri: '/user/create')}"> <input type="button" id="createUserButton" value="createUser"/></a>
 </footer>
+</sec:ifNotLoggedIn>
 </body>
 </html>
