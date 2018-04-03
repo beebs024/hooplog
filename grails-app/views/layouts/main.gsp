@@ -150,7 +150,10 @@
 
 
     <g:layoutBody/>
-
-
+<sec:ifNotLoggedIn>
+<footer>
+    <a class="create" href="${createLink(uri: '/user/create')}"> <input type="button" id="createUserButton" value="createUser"/></a>
+</footer>
+</sec:ifNotLoggedIn>
 </body>
 </html>
