@@ -4,10 +4,11 @@ import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
+import com.manifest.corp.UserRoleController
+
 class UserController {
 
     UserService userService
-    UserRoleService userRoleService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -19,7 +20,7 @@ class UserController {
 
     @Secured(["ROLE_BLOGGER"])
     def show(Long id) {
-        respond userService.get(id)
+        respond userService.ge t(id)
     }
 
     def create() {
@@ -33,10 +34,17 @@ class UserController {
         }
 
         try {
+            def commentRole = Role.findByAuthority('ROLE_COMMENTER')
             userService.save(user)
-            userRoleService.save(user.id, 2)
+            UserRole.create(user, commentRole)
+            UserRole.withSession {
+                it.flush()
+                it.clear()
+            }
         } catch (ValidationException e) {
             respond user.errors, view:'create'
+            user.id == UserRole.user
+            UserRole.role == 2
             return
         }
 

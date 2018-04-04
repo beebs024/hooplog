@@ -6,12 +6,6 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-            </ul>
-        </div>
         <div id="create-user" class="content scaffold-create" role="main">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
@@ -26,13 +20,12 @@
             </g:hasErrors>
             <g:form resource="${this.user}" method="POST">
                 <fieldset class="form">
-                    <label>Username: </label>
+                    <label for="username">Username:</label>
                     <g:textField id="username" name="username"/><br><br>
-                    <label>Password: </label>
+                    <label for="password">Password:</label>
                     <g:textField id="password" name="password"/>
-                    <g:textField id="user" name="user"/>
-                    <g:textField id="role" name="role" value="2"/>
-
+                    <g:fieldValue id="${user}" name="user" value="${user.count()+1}" controller="userRole"/>
+                    <g:fieldValue id="${role}" name="role" value="${2}" controller="userRole"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
