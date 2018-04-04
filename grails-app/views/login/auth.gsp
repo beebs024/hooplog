@@ -214,18 +214,15 @@
 
 
 
-        <form action="/login/authenticate" method="POST" id="loginForm" class="cssform" autocomplete="off" data-op-form-id="0">
+        <form action="/login/authenticate" method="POST" id="loginForm" class="cssform" autocomplete="off">
             <p>
                 <label for="username">Username:</label>
-                <op-button data-op-target="0" data-state="active" style="
-                margin-left: 96px;
-                margin-top: 8.5px;
-                "></op-button><input type="text" value="${params.username}" class="text_" name="username" id="username" data-op-id="0">
+                <input type="text" value="${params.username}" class="text_" name="username" id="username">
             </p>
 
             <p>
                 <label for="password">Password:</label>
-                <input type="password" value="${params.password}" class="text_" name="password" id="password" data-op-id="1">
+                <input type="password" value="${params.password}" class="text_" name="password" id="password">
             </p>
 
             <p id="remember_me_holder">
@@ -244,8 +241,3 @@
         document.forms['loginForm'].elements['username'].focus();
     })();
 </script>
-
-
-
-
-<iframe id="op-popup" src="chrome-extension://aeblfdkhhhdcdjpifhhbdiojplfjncoa/inline/inline.html#/en/fill/login/fill/142/0/1/username" class="" style="position:absolute; top:377.59375px; left:682.25px; z-index: 2147483647;" data-rows="0"></iframe><op-notch class="" style="left: 905.25px; top: 367.59375px; z-index:2147483647;"></op-notch></body></html>
