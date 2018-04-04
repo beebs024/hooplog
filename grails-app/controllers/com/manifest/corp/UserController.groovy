@@ -21,7 +21,7 @@ class UserController {
     /*@Secured(["ROLE_BLOGGER"])*/
     def show(Long id) {
         respond userService.get(id)
-        redirect(controller: "posts", action: "index")
+        redirect(controller: "login", action: "auth")
     }
 
     def create() {
