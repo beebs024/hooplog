@@ -18,9 +18,10 @@ class UserController {
         respond userService.list(params), model:[userCount: userService.count()]
     }
 
-    @Secured(["ROLE_BLOGGER"])
+    /*@Secured(["ROLE_BLOGGER"])*/
     def show(Long id) {
-        respond userService.ge t(id)
+        respond userService.get(id)
+        redirect(controller: "posts", action: "index")
     }
 
     def create() {
