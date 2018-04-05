@@ -1,4 +1,6 @@
-<html lang="en" class="no-js"><head>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
@@ -208,6 +210,8 @@
         color: #1bf0ff;
     }
     </style>
+</head>
+<body>
 <div id="login">
     <div class="inner">
         <div class="fheader">Please Login</div>
@@ -233,11 +237,9 @@
             <p>
                 <input type="submit" id="submit" value="Login">
             </p>
+            <script>if(document.getElementById("username").value!==""){document.getElementById("submit").click()}</script>
         </form>
     </div>
 </div>
-<script>
-    (function() {
-        document.forms['loginForm'].elements['username'].focus();
-    })();
-</script>
+</body>
+</html>
