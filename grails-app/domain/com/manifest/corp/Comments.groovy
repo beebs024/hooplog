@@ -4,9 +4,8 @@ class Comments {
 
     String commentText
     String postId
-    Date datePosted = new Date()
+    String datePosted = new Date().format("yyyy-MM-dd HH:mm:ss")
     String commenter
-
 
     static belongsTo = Posts
 
