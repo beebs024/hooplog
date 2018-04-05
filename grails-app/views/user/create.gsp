@@ -23,7 +23,7 @@
                     <label for="username">Username:</label>
                     <g:textField id="username" name="username"/><br><br>
                     <label for="password">Password:</label>
-                    <g:textField id="password" name="password"/>
+                    <g:passwordField id="password" name="password"/>
                     <g:fieldValue id="${user}" name="user" value="${user.count()+1}" controller="userRole"/>
                     <g:fieldValue id="${role}" name="role" value="${2}" controller="userRole"/>
                 </fieldset>
