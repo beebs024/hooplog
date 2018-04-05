@@ -221,12 +221,12 @@
         <form action="/login/authenticate" method="POST" id="loginForm" class="cssform" autocomplete="off">
             <p>
                 <label for="username">Username:</label>
-                <input type="text" value="${params.username}" class="text_" name="username" id="username">
+                <input type="text" value="${params.username}" class="text_" name="username" id="username" required="true">
             </p>
 
             <p>
                 <label for="password">Password:</label>
-                <input type="password" value="${params.password}" class="text_" name="password" id="password">
+                <input type="password" value="${params.password}" class="text_" name="password" id="password" required="true">
             </p>
 
             <p id="remember_me_holder">
