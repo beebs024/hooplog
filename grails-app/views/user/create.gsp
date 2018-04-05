@@ -21,9 +21,9 @@
             <g:form resource="${this.user}" method="POST">
                 <fieldset class="form">
                     <label for="username">Username:</label>
-                    <g:textField id="username" name="username" required="true"/><br><br>
+                    <g:textField id="username" name="username" required="true" maxlength = "32"/><br><br>
                     <label for="password">Password:</label>
-                    <g:passwordField id="password" name="password" required="true" minlength = "10"/>
+                    <g:passwordField id="password" name="password" required="true" minlength = "10" maxlength = "64"/>
                     <g:fieldValue id="${user}" name="user" value="${user.count()+1}" controller="userRole"/>
                     <g:fieldValue id="${role}" name="role" value="${2}" controller="userRole"/>
                 </fieldset>
