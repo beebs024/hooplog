@@ -112,8 +112,8 @@
     a.home, a.create, a.list, input.save{
         display: block;
         margin-right: auto;
-        color: #000000;
-        background-color: #1bf0ff;
+        color: rgba(0, 0, 0, 0);
+        background-color: rgba(27, 240, 255, 0);
     }
 
     div#navbar{
@@ -186,9 +186,9 @@
         border: 0;
         box-shadow: none;
     }
-    input#loginButton, input#logoutButton, input#submit{
+    input#loginButton, input#logoutButton, input#submit, input#createUserButton{
         color: #000000;
-        background-color: #1bf0ff;
+        background-color: rgb(27, 240, 255);
         border-radius: 15px;
     }
     div#loginOrOut{
@@ -237,9 +237,11 @@
             <p>
                 <input type="submit" id="submit" value="Login">
             </p>
+            <a class="create" href="${createLink(uri: '/user/create')}"> <input type="button" id="createUserButton" value="createUser"/></a>
             <script>if(document.getElementById("username").value!==""){document.getElementById("submit").click()}</script>
         </form>
     </div>
 </div>
 </body>
+
 </html>

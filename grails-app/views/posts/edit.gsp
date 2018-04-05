@@ -14,7 +14,12 @@
             line-height: 24px;
             border-radius: 30px;
         }
-
+        a.create{
+            display: block;
+            margin-right: auto;
+            color: #000000;
+            background-color: #1bf0ff;
+        }
         </style>
     </head>
 <script>

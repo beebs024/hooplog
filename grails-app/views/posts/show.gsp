@@ -13,7 +13,12 @@
             color: #1bf0ff;
             text-align: center;
         }
-
+        a.create{
+            display: block;
+            margin-right: auto;
+            color: #000000;
+            background-color: #1bf0ff;
+        }
         </style>
         <g:javascript library="jquery"/>
     </head>

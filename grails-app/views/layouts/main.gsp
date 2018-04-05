@@ -21,7 +21,7 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        a.home, a.create, a.list, input.save{
+        a.home, a.list, input.save{
             display: block;
             margin-right: auto;
             color: #000000;
@@ -150,10 +150,7 @@
 
 
     <g:layoutBody/>
-<sec:ifNotLoggedIn>
-<footer>
-    <a class="create" href="${createLink(uri: '/user/create')}"> <input type="button" id="createUserButton" value="createUser"/></a>
-</footer>
-</sec:ifNotLoggedIn>
+
+
 </body>
 </html>
